@@ -596,6 +596,7 @@ if __name__ == "__main__":
     # want that to be polluted.
     VALIDATE_MNTPT = TMP_DIR + "/validate_mntpt"
 
+    ips_unset_auth(FUTURE_AUTH, PKG_IMG_MNT_PT)
     STATUS = ips_set_auth(FUTURE_URL, FUTURE_AUTH, PKG_IMG_MNT_PT,
                           pref_flag=True)
     if STATUS != TM_E_SUCCESS:
