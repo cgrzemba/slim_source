@@ -417,7 +417,7 @@ zfm_create_pool(nvlist_t *attrs)
 	    zfs_pool_name, zfs_device);
 
 	(void) snprintf(cmd, sizeof (cmd),
-	    "/usr/sbin/zpool create -f %s %s",
+	    "/usr/sbin/zpool create -f -B %s %s",
 	    zfs_pool_name, zfs_device);
 
 	if (zfm_system(cmd) == -1) {

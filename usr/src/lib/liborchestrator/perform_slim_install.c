@@ -2264,7 +2264,10 @@ prepare_zfs_root_pool_attrs(nvlist_t **attrs, char *disk_name, uint8_t slice_id)
 		return (OM_FAILURE);
 	}
 
-	snprintf(zfs_device, sizeof (zfs_device), "%ss%d", disk_name, slice_id);
+	if (slice_id != 0) {
+		om_log_print("EFI boot requires whole disk layout, slice %d could not be used . \n", slice_id);
+		/* snprintf(zfs_device, sizeof (zfs_device), "%ss%d", disk_name, slice_id); */
+	}
 
 	if (nvlist_add_string(*attrs, TI_ATTR_ZFS_RPOOL_DEVICE,
 	    zfs_device) != 0) {
