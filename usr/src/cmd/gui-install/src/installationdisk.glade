@@ -197,6 +197,7 @@
                                         <property name="can_focus">True</property>
                                         <property name="receives_default">False</property>
                                         <property name="draw_indicator">True</property>
+					<property name="active">True</property>
                                         <accessibility>
                                           <atkrelation type="labelled-by" target="diskwarninglabel"/>
                                         </accessibility>
